@@ -1,0 +1,149 @@
+html, body {
+    font-family: 'Barlow', sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+    scroll-behavior: smooth;
+    color: red;
+    background-color: #232121;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+.navbar .links a {
+    font-weight: bold;
+    transition: all 0.4s ease;
+    padding: 12px 0px;
+    border-bottom: 1px solid ;
+    border-top: 1px solid;
+}
+
+.navbar .links a:hover {
+    border-bottom: 4px solid;
+    border-top: 4px solid;
+    padding: 5px 0px;
+}
+
+.links li:first-child a,
+.dropdown_menu li:first-child a {
+    border-color:hsl(316, 73%, 52%);
+    color: hsl(316, 73%, 52%);
+}
+
+.links li:nth-child(2) a,
+.dropdown_menu li:nth-child(2) a {
+    border-color: hsl(38, 99%, 67%);
+    color: hsl(38, 99%, 67%);
+}
+
+.links li:nth-child(3) a,
+.dropdown_menu li:nth-child(3) a {
+    border-color: hsl(185, 100%, 57%);
+    color: hsl(185, 100%, 57%);
+}
+
+
+/*HEADER*/
+header {
+    position: relative;
+    padding: 0.5rem 2rem;
+    background-color: #222;
+    box-shadow: 0 4px 6px -3px #686262;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo img{
+    width: 200px;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* DROPDOWN MENU */
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 1.5rem;
+    top: 75px;
+    width: 250px;
+    height: 0px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 0px 0px 10px 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 160px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown_menu li a {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 2px 0px;
+    border-bottom: 0px solid;
+}
+
+.dropdown_menu li a:hover {
+    border-bottom: 2px solid;
+}
+
+/*RESPONSIVE*/
+@media only screen and (max-width: 992px) {
+    .navbar .links {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width: 576px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+}
+
+.profile_pic {
+    width: 180px;
+}
+

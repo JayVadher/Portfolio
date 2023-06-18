@@ -3,24 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Jay Vadher | Portfolio</title>
 </head>
 <body>
     <header>
-        <img src="" alt="logo" class="logo">
-        <nav class="menu">
-            <ul>
-                <li>About Me</li>
-                <li>Projects</li>
-                <li>Skills</li>
-                <li>Contact</li>
-            </ul>    
-        </nav>
+        <div class="navbar">
+            <div class="logo"><a href="/portfolio/index.html"><img src="images/jay_vadher_logo.png" alt="logo"></a></div>
+            <ul class="links">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="/portfolio/contact.html">Contact</a></li>
+            </ul>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="/portfolio/contact.html">Contact</a></li>
+        </div>
     </header>
+
     <main>
         <div class="about">
             <div class="profile_container">
-                <img src="" alt="profile picture" class="profile_pic">
+                <img src="/portfolio/images/jay_profile_pic.png" alt="profile picture" class="profile_pic">
             </div>
             <div class="about_container">
                 <h1>Who's Jay?</h1>
@@ -45,7 +59,7 @@
                 </p>
             </div>
         </div>
-        <div class="projects">
+        <div class="projects" id="projects">
             <h2>Projects</h2>
             <div>
                 <div class="card">card 1</div>
@@ -65,7 +79,7 @@
             </div>
             <button class="more_projects_button button_secondary">View All Projects</button>
         </div>
-        <div class="skills">
+        <div class="skills" id="skills">
             <h2>Skills</h2>
             <div class="skills_container">
                 <img src="" alt="html5 Logo">
@@ -88,5 +102,7 @@
            </ul>
         </div>
     </footer>
+    
+<script src="js/script.js"></script>
 </body>
 </html>
