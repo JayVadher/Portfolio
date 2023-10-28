@@ -588,7 +588,7 @@ hr {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(images/background_coding.jpg);
+    background-image: url("../images/background_coding.jpg");
     background-size: cover;
     background-position: bottom;
     filter: grayscale(1);
