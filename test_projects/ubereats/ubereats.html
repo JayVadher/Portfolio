@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../test_projects/ubereats/ubereats_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+    <title>Uber Eats Clone</title>
+</head>
+<body>
+    <header class="nav">
+        <i class="fa-solid fa-bars" style="color: #000000;"></i>
+        <img src="../../test_projects/ubereats/images/uber_eats_logo.svg" alt="Uber Eats Logo" class="logo">
+        <div class="service_type" role="radiogroup" aria-labelledby="service_type">
+
+            <input type="radio" id="delivery" name="service_type" value="delivery" checked>
+            <label for="delivery">Delivery</label>
+
+            <input type="radio" id="pickup" name="service_type" value="pickup">
+            <label for="pickup">Pickup</label>
+        </div>
+        <div class="address_bar">
+            <i class="fa-solid fa-location-dot" style="color: #000000;"></i>
+            <span class="address">123 Read St</span><span> &bullet; </span>
+            <span id="service_type_text">now</span>
+        </div>
+        <div class="search_bar">
+            <i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i>
+            <input type="search" placeholder="What are you craving?">
+        </div>
+        <div class="cart_bar">
+            <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+            <span class="cart"><span class="cart_counter">0</span> carts</span>
+        </div>
+    </header>
+    <main>
+        <section class="shortcut_bar">
+            <div class="shortcut">
+                <img src="./images/deals.png"/>
+                <span>Deals</span>
+            </div>
+            <div class="shortcut">
+                <img src="./images/uber_grocery.png"/>
+                <span>Grocery</span>
+            </div>
+
+            <div class="shortcut">
+                <img src="./images/convenience.png"/>
+                <span>Convenience</span>
+            </div>
+            <div class="shortcut">
+                <img src="./images/indian.png"/>
+                <span>Indian</span>
+            </div>
+            <div class="shortcut">
+                <img src="./images/pharmacy-v2.png"/>
+                <span>Pharmacy</span>
+            </div>
+            <div class="shortcut">
+                <img src="./images/top_eats.png"/>
+                <span>Highest Rated</span>
+            </div>
+            <div class="shortcut">
+                <img src="./images/pizza.png"/>
+                <span>Pizza</span>
+            </div>
+            <div class="shortcut">
+                <img src="./images/middleeastern.png"/>
+                <span>Middle Eastern</span>
+            </div>
+            <div class="shortcut">
+                <img src="./images/chinese.png"/>
+                <span>Chinese</span>
+            </div>
+            <div class="shortcut">
+                <img src="./images/fastfood.png"/>
+                <span>Fast food</span>
+            </div>
+            <div class="shortcut">
+                <img src="./images/bbq.png"/>
+                <span>BBQ</span>
+            </div>
+            <div class="shortcut">
+                <img src="./images/japanese.png"/>
+                <span>Japanese</span>
+            </div>
+            <div class="shortcut">
+                <img src="./images/asian.png"/>
+                <span>Asian</span>
+            </div>
+            <div class="shortcut">
+                <img src="./images/vietnamese.png"/>
+                <span>Vietnamese</span>
+            </div>
+        </section>
+        <hr>
+        <section class="content">
+            <aside>
+                <h2>All Stores</h2>
+                <div id="sort" class="aside_group">
+                    <div class="aside_title">
+                        <h3>Sort</h3>
+                        <i class=" fa-sharp fa-solid fa-chevron-up collapsible" id="collapsible_icon" style="color: #000000;"></i>
+                    </div>
+                    <div id="sort_group">
+                        <form>
+                            <fieldset >
+                                <label class="container" for="sort_default">Picked for you (default)
+                                    <input type="radio" id="sort_default" name="sort_group" value="Picked for you (default)" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="container" for="sort_popular">Most Popular
+                                    <input type="radio" id="sort_popular" name="sort_group" value="Most Popular">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="container" for="sort_rating">Rating
+                                    <input type="radio" id="sort_rating" name="sort_group" value="Rating" >
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="container" for="sort_delivery">Delivery Time
+                                    <input type="radio" id="sort_delivery" name="sort_group" value="Delivery Time">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="fromUE" class="aside_group">
+                    <div class="aside_title">
+                        <h3>From Uber Eats</h3>
+                        <i class=" fa-sharp fa-solid fa-chevron-up collapsible" id="collapsible_icon" style="color: #000000;"></i>
+                    </div>
+                    <form id="fromUE_group">
+                        <fieldset>
+                            
+                            <label class="switch_container" for="deals">
+                                <span>
+                                    <i class="fa-sharp fa-solid fa-tag fa-flip-horizontal" style="color: #000000;"></i>
+                                    Deals
+                                </span>
+                                <input type="checkbox" id="deals" name="fromUE_group" value="deals">
+                                <span class="slider"></span>
+                            </label>
+                            <label class="switch_container" for="best_overall">
+                                <span>
+                                <i class="fa-sharp fa-solid fa-medal" style="color: #000000;"></i>
+                                Best Overall
+                            </span>
+                                <input type="checkbox" id="best_overall" name="fromUE_group" value="best_overall">
+                                <span class="slider"></span>
+                            </label>      
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div id="price_range" class="aside_group">
+                    <div class="aside_title">
+                        <h3>Price Range</h3>
+                        <i class=" fa-sharp fa-solid fa-chevron-up collapsible" id="collapsible_icon" style="color: #000000;"></i>
+                    </div>
+                    <form id="pricerange_group">
+                        <fieldset>
+                            <label class="pricerange_container" for="low_value">
+                                <input type="checkbox" id="low_value"/>
+                                    <div>
+                                        <span>$</span>
+                                    </div>
+                            </label>
+                            <label class="pricerange_container" for="mid_value">
+                                <input type="checkbox" id="mid_value"/>
+                                    <div>
+                                        <span>$$</span>
+                                    </div>
+                            </label>
+                            <label class="pricerange_container" for="high_value">
+                                <input type="checkbox" id="high_value"/>
+                                    <div>
+                                        <span>$$$</span>
+                                    </div>
+                            </label>
+                            <label class="pricerange_container" for="veryhigh_value">
+                                <input type="checkbox" id="veryhigh_value"/>
+                                    <div>
+                                        <span>$$$$</span>
+                                    </div>
+                            </label>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div id="delivery_fee" class="aside_group">
+                    <div class="aside_title">
+                        <h3>Max Delivery Fee</h3>
+                        <i class=" fa-sharp fa-solid fa-chevron-up collapsible" id="collapsible_icon" style="color: #000000;"></i>
+                    </div>
+                    <form id="deliveryfee_group">
+                        <fieldset>
+                            <input type="range" id="deliveryfee_range" name="deliveryfee_range" list="values" step="33.33" class="delivery_slider"/>
+    
+                            <datalist id="values">
+                                <option value="1" label="$1"></option>
+                                <option value="33" label="$3"></option>
+                                <option value="66" label="$5"></option>
+                                <option value="99" label="$5+"></option>
+                            </datalist>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div id="dietary" class="aside_group">
+                    <div class="aside_title">
+                        <h3>Dietary</h3>
+                        <i class=" fa-sharp fa-solid fa-chevron-up collapsible" id="collapsible_icon" style="color: #000000;"></i>
+                    </div>
+                    <form id="dietary_group">
+                        <fieldset>
+                            <label class="dietary_container" for="vegetarian">
+                                <input type="checkbox" id="vegetarian"/>
+                                    <div>
+                                        <span><i class="fa-sharp fa-solid fa-leaf" style="color: #000000;"></i>  
+                                            Vegetarian</span>
+                                    </div>
+                            </label>
+                            <label class="dietary_container" for="vegan">
+                                <input type="checkbox" id="vegan"/>
+                                    <div>
+                                        <span><i class="fa-sharp fa-regular fa-heart" style="color: #000000;"></i>  
+                                            Vegan</span>
+                                    </div>
+                            </label>
+                            <label class="dietary_container" for="gluten_free">
+                                <input type="checkbox" id="gluten_free"/>
+                                    <div>
+                                        <span><i class="fa-sharp fa-solid fa-wheat-awn-circle-exclamation" style="color: #000000;"></i>
+                                            Gluten Free</span>
+                                    </div>
+                            </label>
+                            <label class="dietary_container" for="halal">
+                                <input type="checkbox" id="halal"/>
+                                    <div>
+                                        <span><i class="fa-sharp fa-solid fa-mosque" style="color: #000000;"></i>  
+                                            Halal</span>
+                                    </div>
+                            </label>
+                        </fieldset>
+                    </form>
+                </div>
+
+            </aside>
+            <section class="main_content" id="main-content">
+                <div class="service_fees">
+                    <img src="./images/megaphone@3x.png" alt="Announcement megaphone">
+                    <span>
+                        <h1>^ Service Fees may apply</h1>
+                        <p>How do fees work?</p>
+                    </span>
+                </div>
+
+                <div class="eats_section_slides restaurant_category">
+                    <div class="section_head">
+                        <h1>Featured on Uber Eats</h1>
+                        <div class="arrows" id="arrows1">
+                            <button class="left"><i class="fa-solid fa-arrow-left"></i></button>
+                            <button class="right"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>                    
+                    <div class="items_section" id="carousel-1">
+                        <div class="restaurant_item">
+                            <div class="restaurant_img_container">
+                                <img src="./images/red rooster.jpg" alt="Red Rooster">
+                                <span class="fav_restaurant"> <i class="fa-regular fa-heart fa-lg" style="color: #ffffff;"></i> </span>
+                            </div>
+                            <div class="restaurant_info_container">
+                                <h3>Red Rooster (Paris) </h3>
+                                <span class="restaurant_rating">4.3</span>
+                            </div>
+                            <p class="delivery_info">$3.49 Delivery Fee^. 10-20 min</p>
+                        </div>
+                        <div class="restaurant_item">
+                            <div class="restaurant_img_container">
+                                <img src="./images/dominos.jpg" alt="Dominos">
+                                <span class="fav_restaurant"> <i class="fa-regular fa-heart fa-lg" style="color: #ffffff;"></i> </span>
+                            </div>
+                            <div class="restaurant_info_container">
+                                <h3>Dominos (Nairobi) </h3>
+                                <span class="restaurant_rating">4.8</span>
+                            </div>
+                            <p class="delivery_info">$4.49 Delivery Fee^. 15-20 min</p>
+                        </div>
+                        <div class="restaurant_item">
+                            <div class="restaurant_img_container">
+                                <img src="./images/red rooster.jpg" alt="Red Rooster">
+                                <span class="fav_restaurant"> <i class="fa-regular fa-heart fa-lg" style="color: #ffffff;"></i> </span>
+                            </div>
+                            <div class="restaurant_info_container">
+                                <h3>Red Rooster (Paris) </h3>
+                                <span class="restaurant_rating">4.3</span>
+                            </div>
+                            <p class="delivery_info">$3.49 Delivery Fee^. 10-20 min</p>
+                        </div>
+                        <div class="restaurant_item">
+                            <div class="restaurant_img_container">
+                                <img src="./images/dominos.jpg" alt="Dominos">
+                                <span class="fav_restaurant"> <i class="fa-regular fa-heart fa-lg" style="color: #ffffff;"></i> </span>
+                            </div>
+                            <div class="restaurant_info_container">
+                                <h3>Dominos (Nairobi) </h3>
+                                <span class="restaurant_rating">4.8</span>
+                            </div>
+                            <p class="delivery_info">$4.49 Delivery Fee^. 15-20 min</p>
+                        </div>
+                        <div class="restaurant_item">
+                            <div class="restaurant_img_container">
+                                <img src="./images/red rooster.jpg" alt="Red Rooster">
+                                <span class="fav_restaurant"> <i class="fa-regular fa-heart fa-lg" style="color: #ffffff;"></i> </span>
+                            </div>
+                            <div class="restaurant_info_container">
+                                <h3>Red Rooster (Paris) </h3>
+                                <span class="restaurant_rating">4.3</span>
+                            </div>
+                            <p class="delivery_info">$3.49 Delivery Fee^. 10-20 min</p>
+                        </div>
+                        <div class="restaurant_item">
+                            <div class="restaurant_img_container">
+                                <img src="./images/dominos.jpg" alt="Dominos">
+                                <span class="fav_restaurant"> <i class="fa-regular fa-heart fa-lg" style="color: #ffffff;"></i> </span>
+                            </div>
+                            <div class="restaurant_info_container">
+                                <h3>Dominos (Nairobi) </h3>
+                                <span class="restaurant_rating">4.8</span>
+                            </div>
+                            <p class="delivery_info">$4.49 Delivery Fee^. 15-20 min</p>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="eats_section_slides food_category">
+                    <div class="section_head" >
+                        <h1>Recommended dishes</h1>
+                        <div class="arrows" id="arrows2">
+                            <button class="left"><i class="fa-solid fa-arrow-left"></i></button>
+                            <button class="right"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="items_section" id="carousel-2">
+                        <div class="food_item">
+                            <img src="./images/maccas chips.jpg" alt="chips">
+                            <h3>Regular Chips</h3>
+                            <span>$2.49</span>
+                            <p class="item_restaurant">Maccas (Perth)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/ranch_dip.jpg" alt="ranch dip">
+                            <h3>Ranch Dip</h3>
+                            <span>$0.49</span>
+                            <p class="item_restaurant">Kfc (New York)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/fried chicken.jpg" alt="fried chicken">
+                            <h3>Fried Chicken</h3>
+                            <span>$4.99</span>
+                            <p class="item_restaurant">Kfc (London)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/sunkist.jpg" alt="sunkist">
+                            <h3>Sunkist</h3>
+                            <span>$1.99</span>
+                            <p class="item_restaurant">Spudshed (Toronto)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/pepperoni.jpg" alt="pepperoni pizza">
+                            <h3>Pepperoni</h3>
+                            <span>$10.99</span>
+                            <p class="item_restaurant">Pizza Hut (Madrid)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/burger.jpg" alt="veg burger">
+                            <h3>Veggie Burger</h3>
+                            <span>$8.39</span>
+                            <p class="item_restaurant">Burgers R Us (Sydney)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/maccas chips.jpg" alt="chips">
+                            <h3>Regular Chips</h3>
+                            <span>$2.49</span>
+                            <p class="item_restaurant">Maccas (Perth)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/fried chicken.jpg" alt="fried chicken">
+                            <h3>Fried Chicken</h3>
+                            <span>$4.99</span>
+                            <p class="item_restaurant">Kfc (London)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/sunkist.jpg" alt="sunkist">
+                            <h3>Sunkist</h3>
+                            <span>$1.99</span>
+                            <p class="item_restaurant">Spudshed (Toronto)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/burger.jpg" alt="veg burger">
+                            <h3>Veggie Burger</h3>
+                            <span>$8.39</span>
+                            <p class="item_restaurant">Burgers R Us (Sydney)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/ranch_dip.jpg" alt="ranch dip">
+                            <h3>Ranch Dip</h3>
+                            <span>$0.49</span>
+                            <p class="item_restaurant">Kfc (New York)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/pepperoni.jpg" alt="pepperoni pizza">
+                            <h3>Pepperoni</h3>
+                            <span>$10.99</span>
+                            <p class="item_restaurant">Pizza Hut (Madrid)</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="eats_section_slides restaurant_category">
+                    <div class="section_head">
+                        <h1>Popular near you</h1>
+                        <div class="arrows" id="arrows3">
+                            <button class="left"><i class="fa-solid fa-arrow-left"></i></button>
+                            <button class="right"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>                    
+                    <div class="items_section" id="carousel-3">
+                        <div class="restaurant_item">
+                            <div class="restaurant_img_container">
+                                <img src="./images/red rooster.jpg" alt="Red Rooster">
+                                <span class="fav_restaurant"> <i class="fa-regular fa-heart fa-lg" style="color: #ffffff;"></i> </span>
+                            </div>
+                            <div class="restaurant_info_container">
+                                <h3>Red Rooster (Paris) </h3>
+                                <span class="restaurant_rating">4.3</span>
+                            </div>
+                            <p class="delivery_info">$3.49 Delivery Fee^. 10-20 min</p>
+                        </div>
+                        <div class="restaurant_item">
+                            <div class="restaurant_img_container">
+                                <img src="./images/dominos.jpg" alt="Dominos">
+                                <span class="fav_restaurant"> <i class="fa-regular fa-heart fa-lg" style="color: #ffffff;"></i> </span>
+                            </div>
+                            <div class="restaurant_info_container">
+                                <h3>Dominos (Nairobi) </h3>
+                                <span class="restaurant_rating">4.8</span>
+                            </div>
+                            <p class="delivery_info">$4.49 Delivery Fee^. 15-20 min</p>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="eats_section_slides restaurant_category">
+                    <div class="section_head">
+                        <h1>National Brands</h1>
+                        <div class="arrows" id="arrows4">
+                            <button class="left"><i class="fa-solid fa-arrow-left"></i></button>
+                            <button class="right"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>                    
+                    <div class="items_section" id="carousel-4">
+                        <div class="restaurant_item">
+                            <div class="restaurant_img_container">
+                                <img src="./images/kfc.jpg" alt="KFC">
+                                <span class="fav_restaurant"> <i class="fa-regular fa-heart fa-lg" style="color: #ffffff;"></i> </span>
+                            </div>
+                            <div class="restaurant_info_container">
+                                <h3>KFC (Miami) </h3>
+                                <span class="restaurant_rating">4.6</span>
+                            </div>
+                            <p class="delivery_info">$7.49 Delivery Fee^. 15-20 min</p>
+                        </div>
+                        <div class="restaurant_item">
+                            <div class="restaurant_img_container">
+                                <img src="./images/red rooster.jpg" alt="Red Rooster">
+                                <span class="fav_restaurant"> <i class="fa-regular fa-heart fa-lg" style="color: #ffffff;"></i> </span>
+                            </div>
+                            <div class="restaurant_info_container">
+                                <h3>Red Rooster (Paris) </h3>
+                                <span class="restaurant_rating">4.3</span>
+                            </div>
+                            <p class="delivery_info">$3.49 Delivery Fee^. 10-20 min</p>
+                        </div>
+                        <div class="restaurant_item">
+                            <div class="restaurant_img_container">
+                                <img src="./images/dominos.jpg" alt="Dominos">
+                                <span class="fav_restaurant"> <i class="fa-regular fa-heart fa-lg" style="color: #ffffff;"></i> </span>
+                            </div>
+                            <div class="restaurant_info_container">
+                                <h3>Dominos (Nairobi) </h3>
+                                <span class="restaurant_rating">4.8</span>
+                            </div>
+                            <p class="delivery_info">$4.49 Delivery Fee^. 15-20 min</p>
+                        </div>
+                        <div class="restaurant_item">
+                            <div class="restaurant_img_container">
+                                <img src="./images/kfc.jpg" alt="KFC">
+                                <span class="fav_restaurant"> <i class="expand fa-regular fa-heart fa-lg" style="color: #ffffff;"></i> </span>
+                            </div>
+                            <div class="restaurant_info_container">
+                                <h3>KFC (Miami) </h3>
+                                <span class="restaurant_rating">4.6</span>
+                            </div>
+                            <p class="delivery_info">$7.49 Delivery Fee^. 15-20 min</p>
+                        </div>
+                        
+                        <div class="restaurant_item">
+                            <div class="restaurant_img_container">
+                                <img src="./images/dominos.jpg" alt="Dominos">
+                                <span class="fav_restaurant"> <i class="fa-regular fa-heart fa-lg" style="color: #ffffff;"></i> </span>
+                            </div>
+                            <div class="restaurant_info_container">
+                                <h3>Dominos (Nairobi) </h3>
+                                <span class="restaurant_rating">4.8</span>
+                            </div>
+                            <p class="delivery_info">$4.49 Delivery Fee^. 15-20 min</p>
+                        </div>
+                        <div class="restaurant_item">
+                            <div class="restaurant_img_container">
+                                <img src="./images/kfc.jpg" alt="KFC">
+                                <span class="fav_restaurant"> <i class="fa-regular fa-heart fa-lg" style="color: #ffffff;"></i> </span>
+                            </div>
+                            <div class="restaurant_info_container">
+                                <h3>KFC (Miami) </h3>
+                                <span class="restaurant_rating">4.6</span>
+                            </div>
+                            <p class="delivery_info">$7.49 Delivery Fee^. 15-20 min</p>
+                        </div>
+                        <div class="restaurant_item">
+                            <div class="restaurant_img_container">
+                                <img src="./images/dominos.jpg" alt="Dominos">
+                                <span class="fav_restaurant"> <i class="fa-regular fa-heart fa-lg" style="color: #ffffff;"></i> </span>
+                            </div>
+                            <div class="restaurant_info_container">
+                                <h3>Dominos (Nairobi) </h3>
+                                <span class="restaurant_rating">4.8</span>
+                            </div>
+                            <p class="delivery_info">$4.49 Delivery Fee^. 15-20 min</p>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="eats_section_slides food_category">
+
+                    <div class="section_head" >
+                        <h1>Quick Snacks</h1>
+                        <div class="arrows" id="arrows5">
+                            <button class="left"><i class="fa-solid fa-arrow-left"></i></button>
+                            <button class="right"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="items_section" id="carousel-5">
+                        <div class="food_item">
+                            <img src="./images/maccas chips.jpg" alt="chips">
+                            <h3>Regular Chips</h3>
+                            <span>$2.49</span>
+                            <p class="item_restaurant">Maccas (Perth)</p>
+                        </div>
+                        
+                        <div class="food_item">
+                            <img src="./images/fried chicken.jpg" alt="fried chicken">
+                            <h3>Fried Chicken</h3>
+                            <span>$4.99</span>
+                            <p class="item_restaurant">Kfc (London)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/sunkist.jpg" alt="sunkist">
+                            <h3>Sunkist</h3>
+                            <span>$1.99</span>
+                            <p class="item_restaurant">Spudshed (Toronto)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/burger.jpg" alt="veg burger">
+                            <h3>Veggie Burger</h3>
+                            <span>$8.39</span>
+                            <p class="item_restaurant">Burgers R Us (Sydney)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/maccas chips.jpg" alt="chips">
+                            <h3>Regular Chips</h3>
+                            <span>$2.49</span>
+                            <p class="item_restaurant">Maccas (Perth)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/fried chicken.jpg" alt="fried chicken">
+                            <h3>Fried Chicken</h3>
+                            <span>$4.99</span>
+                            <p class="item_restaurant">Kfc (London)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/sunkist.jpg" alt="sunkist">
+                            <h3>Sunkist</h3>
+                            <span>$1.99</span>
+                            <p class="item_restaurant">Spudshed (Toronto)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/burger.jpg" alt="veg burger">
+                            <h3>Veggie Burger</h3>
+                            <span>$8.39</span>
+                            <p class="item_restaurant">Burgers R Us (Sydney)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/ranch_dip.jpg" alt="ranch dip">
+                            <h3>Ranch Dip</h3>
+                            <span>$0.49</span>
+                            <p class="item_restaurant">Kfc (New York)</p>
+                        </div>
+                        <div class="food_item">
+                            <img src="./images/pepperoni.jpg" alt="pepperoni pizza">
+                            <h3>Pepperoni</h3>
+                            <span>$10.99</span>
+                            <p class="item_restaurant">Pizza Hut (Madrid)</p>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </section>
+        </section>
+    </main>
+    <footer>
+        <section class="footer_top">
+        <div class="footer_apps">
+            
+            <div><img src="./images/uber_eats_logo.svg" alt="logo" class="footer_logo"></div>
+
+            <div>
+                <img src="./images/app store.png" alt="Apple Store">
+                <img src="./images/google play.png" alt="Google Play store">
+            </div>
+        </div>
+        <div></div>
+        <div>
+            <nav>
+                <ul>
+                    <li>Get Help</li>
+                    <li>Buy gift cards</li>
+                    <li>Add your restaurant</li>
+                    <li>Sign up to deliver</li>
+                    <li>Create a business account</li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <li>Restaurants near me</li>
+                    <li>View all cities</li>
+                    <li>View all countries</li>
+                    <li>Pick-up near me</li>
+                    <li>About Uber Eats</li>
+                    <li>English</li>
+                </ul>
+            </nav>
+        </div>
+        </section>
+        <hr>
+        <section class="footer_bottom">
+            <div class="socials">
+                <i class="fa-brands fa-square-facebook fa-xl" style="color: #000000;"></i>
+                <i class="fa-brands fa-square-twitter fa-xl" style="color: #000000;"></i>
+                <i class="fa-brands fa-square-instagram fa-xl"style="color:#000000;" ></i>
+            </div>
+            <div class="policies">
+                <ul>
+                    <li>Privacy Policy</li>
+                    <li>Terms</li>
+                    <li>Pricing</li>
+                    <li>Do not sell or Share my personal information</li>
+                </ul>
+            </div>
+        </section>
+        <p>© 2023 Uber Technologies Inc.</p>
+    </footer>
+   
+
+    <script src="ubereats_script.js" type="text/javascript"></script>
+</body>
+</html>

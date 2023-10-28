@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="morningfresh_style.css">
+    <title>Morning Fresh - Refreshed Webpage</title>
+</head>
+<body class="rasp_apple_mode" id="body">
+    <header>
+        <img src="./images/logo.webp" alt="Logo" class="logo">
+        <nav class="navbar">
+            <ul> 
+                <li>Home</li>
+                <li>About</li>
+                <li>Shop</li>
+                <li>Contact Us</li>
+                <li>Cart</li>
+            </ul>
+        </nav>    
+    </header>
+    <main>
+        <div class="hero">
+            <div class="product_info">
+                <h1 class="scent_title" id="scent_title">Raspberry & Apple</h1>
+                <p class="scent_info" id="scent_info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia necessitatibus ipsa doloremque. 
+                    Repellat libero fuga officia quae delectus nesciunt illo soluta, sit natus quibusdam mollitia aperiam, 
+                    ullam nulla officiis dolor.
+                </p>
+                <button class="buy_button">Buy Now</button>
+            </div> 
+            <div class="scent_shelf">
+                <input type="radio" id="rasp_apple" name="scent" value="rasp_apple" class="scent" checked onclick="changeMode()"></input>
+                <label for="rasp_apple">
+                    <img src="./images/MORNING-FRESH_FRONT_Raspberry-Apple_900mL.png" alt="">
+                </label>
+                <input type="radio" id="original" name="scent" value="original" class="scent" onclick="changeMode()"></input>
+                <label for="original">
+                    <img src="./images/MORNING-FRESH_FRONT_Original_900mL.webp" alt="">
+                </label>
+                <input type="radio" id="lime" name="scent" value="lime" class="scent" onclick="changeMode()"></input>
+                <label for="lime">
+                    <img src="./images/MORNING-FRESH_FRONT_Lime_900mL.png" alt="">
+                </label>
+                <input type="radio" id="lemon" name="scent" value="lemon" class="scent" onclick="changeMode()"></input>
+                <label for="lemon">
+                    <img src="./images/MORNING-FRESH_FRONT_Lemon_900mL.webp" alt="">
+                </label>
+            </div>
+        </div>
+        <div class="product_container" >
+            <div id="scent_ra" class="splash">
+                <img src="./images/MORNING-FRESH_FRONT_Raspberry-Apple_900mL.png" alt="Product Image" class="product_image">
+                <span class="product_scent">Raspberry & apple</span>
+                <div class="fruit_splash">
+                    <img src="./images/raspberry.png" alt="Fruit" class="raspberry">
+                    <img src="./images/green apple.png" alt="Fruit" class="apple">
+                    <img src="./images/raspberry.png" alt="Fruit" class="raspberry">
+                    <img src="./images/green apple.png" alt="Fruit" class="apple">
+                    <img src="./images/raspberry.png" alt="Fruit" class="raspberry">
+                    <img src="./images/green apple.png" alt="Fruit" class="apple">
+                    <img src="./images/raspberry.png" alt="Fruit" class="raspberry">
+                    <img src="./images/green apple.png" alt="Fruit" class="apple">
+                    <img src="./images/raspberry.png" alt="Fruit" class="raspberry">
+                    
+                </div>
+            </div>
+            <div id="scent_original" class="splash">
+                <img src="./images/MORNING-FRESH_FRONT_Original_900mL.webp" alt="Product Image" class="product_image">
+                <span class="product_scent">Original</span>
+                <div class="fruit_splash">
+                    <img src="./images/green leaves.png" alt="Green Leaf Original" >
+                    <img src="./images/green leaves.png" alt="Green Leaf Original" >
+                    <img src="./images/green leaves.png" alt="Green Leaf Original" >
+                    <img src="./images/green leaves.png" alt="Green Leaf Original" >
+                    <img src="./images/green leaves.png" alt="Green Leaf Original" >
+                    <img src="./images/green leaves.png" alt="Green Leaf Original" >
+                    <img src="./images/green leaves.png" alt="Green Leaf Original" >
+                    <img src="./images/green leaves.png" alt="Green Leaf Original" >
+                    <img src="./images/green leaves.png" alt="Green Leaf Original" >
+                    
+                </div>
+            </div>
+            <div id="scent_lime" class="splash">
+                <img src="./images/MORNING-FRESH_FRONT_Lime_900mL.png" alt="Product Image" class="product_image">
+                <span class="product_scent">Lime</span>
+                <div class="fruit_splash">
+                    <img src="./images/lime.png" alt="Lime Fruit" >
+                    <img src="./images/lime.png" alt="Lime Fruit" >
+                    <img src="./images/lime.png" alt="Lime Fruit" >
+                    <img src="./images/lime.png" alt="Lime Fruit" >
+                    <img src="./images/lime.png" alt="Lime Fruit" >
+                    <img src="./images/lime.png" alt="Lime Fruit" >
+                    <img src="./images/lime.png" alt="Lime Fruit" >
+                    <img src="./images/lime.png" alt="Lime Fruit" >
+                    <img src="./images/lime.png" alt="Lime Fruit" >
+                    
+                </div>
+            </div>
+            <div id="scent_lemon" class="splash">
+                <img src="./images/MORNING-FRESH_FRONT_Lemon_900mL.webp" alt="Product Image" class="product_image">
+                <span class="product_scent">Lemon</span>
+                <div class="fruit_splash">
+                    <img src="./images/lemon" alt="Fruit" >
+                    <img src="./images/lemon" alt="Fruit" >
+                    <img src="./images/lemon" alt="Fruit" >
+                    <img src="./images/lemon" alt="Fruit" >
+                    <img src="./images/lemon" alt="Fruit" >
+                    <img src="./images/lemon" alt="Fruit" >
+                    <img src="./images/lemon" alt="Fruit" >
+                    <img src="./images/lemon" alt="Fruit" >
+                    <img src="./images/lemon" alt="Fruit" >
+                    
+                </div>
+            </div>
+           
+          
+        </div>
+
+    </main>
+
+    <script src="./morningfresh_script.js" type="text/javascript"></script>
+    
+</body>
+</html>

@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0e3eb;
+  transition: background-color 1s;
+}
+
+.logo {
+  position: fixed;
+  top: 15px;
+}
+
+.logo img{
+  width: 100px;
+  padding: 10px;
+  border-radius: 15px;
+  background: #2f9fff;
+}
+
+.container {
+  position: relative;
+  background: #fff;
+  max-width: 300px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 10px 20px 20px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+
+#mode_label{
+  line-height: 40px;
+  text-transform: uppercase;
+}
+
+#mode_checkbox{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  height: 40px;
+  width: 80px;
+  border-radius: 5rem;
+  box-shadow: 0 0 15px #00000077;
+  cursor: pointer;
+  float: right;
+  margin-bottom: 10px;
+  background-color: #eee;
+  transition: background-color .2s;
+}
+
+#mode_checkbox::after{
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #2f9fff;
+  transition: left .5s;
+}
+
+#mode_checkbox:checked{
+  background-color: #ccc;
+}
+
+#mode_checkbox:checked::after{
+  left: 75%;
+}
+
+.display {
+  margin-bottom: 10px;
+  width: 100%;
+  height: 80px;
+  font-size: 25px;
+  text-align: right;
+  border: none;
+  outline: none;
+  color: #000e1a;
+  pointer-events: none;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px;
+  padding-right: 5px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.buttons button{
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: #eee;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.buttons button:active{
+  transform: scale(0.95);
+}
+
+.operator {
+  color: #2f9fff;
+}
+
+/* DARK MODE */
+.dark_mode {
+  background: #303030;
+  transition: background-color 1s;
+}
+
+.dark_mode .container {
+  background: #0f0f0f;
+}
+
+.dark_mode button {
+  background-color: #ccc;
+}
+
+.dark_mode .operator,
+.dark_mode #mode_label{
+  color: #fe8040;
+}
+
+.dark_mode #mode_checkbox::after,
+.dark_mode .logo img{
+  background-color: #fe8040;
+}

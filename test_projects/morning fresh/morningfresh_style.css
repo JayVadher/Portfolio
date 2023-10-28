@@ -1,0 +1,394 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  width: 55%;
+  height: auto;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+  padding: 20px 40px;
+}
+
+.logo {
+  width: 150px;
+}
+
+.navbar {
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbar ul li {
+  list-style-type: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0DB02B;
+  cursor: pointer;
+  transition: 500ms ease;
+}
+
+.navbar ul li:hover {
+  color: #DD372B;
+}
+
+.scent_shelf {
+  width: 40%;
+  position: absolute;
+  bottom: 5vh;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.scent_shelf input[type=radio] {
+  display: none;
+}
+
+.scent_shelf input[type=radio] + label {
+  height: 80px;
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid;
+  outline: 3px solid #fff;
+  outline-offset: -5px;
+  transition: 300ms ease;
+}
+
+.scent_shelf input[type=radio] + label img {
+  height: 80px;
+  position: relative;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  bottom: -40%;
+  transition: 300ms ease;
+}
+
+.scent_shelf input[type=radio] + label:hover img,
+.scent_shelf input[type=radio]:checked + label img {
+  height: 130px;
+  left: 50%;
+  bottom: -5%;
+}
+
+.scent_shelf input[type=radio]:checked + label img
+ {
+  filter: drop-shadow(2px 2px 5px #000);
+}
+
+.scent_shelf input[type=radio]#rasp_apple + label  {
+  background-color: #E2415F;
+  border-color: #E2415F;
+}
+
+.scent_shelf input[type=radio]#original + label  {
+  background-color: gold;
+  border-color: gold;
+}
+.scent_shelf input[type=radio]#lime + label  {
+  background-color: #7CB227;
+  border-color: #7CB227;
+}
+.scent_shelf input[type=radio]#lemon + label  {
+  background-color: yellow;
+  border-color: yellow;
+}
+
+/* LEMON  */
+.lemon_mode #scent_lemon {
+  display: block;
+}
+
+.lemon_mode #scent_ra,
+.lemon_mode #scent_original,
+.lemon_mode #scent_lime {
+  display: none;
+}
+
+.lemon_mode .product_container {
+   background-color: yellow;
+ }
+ 
+ .lemon_mode .product_scent,
+ .lemon_mode .scent_title {
+   color: #000;
+ }
+
+ .lemon_mode .product_scent {
+  left: 115vh;
+ }
+ 
+ 
+ 
+ /* RASPBERRY APPLE MODE  */
+ 
+ .rasp_apple_mode #scent_ra {
+   display: block;
+ }
+ 
+ .rasp_apple_mode #scent_lemon,
+ .rasp_apple_mode #scent_lime,
+ .rasp_apple_mode #scent_original {
+   display: none;
+ }
+
+ /* ORIGINAL MODE  */
+ 
+ .original_mode #scent_original {
+  display: block;
+}
+
+.original_mode #scent_lemon,
+.original_mode #scent_lime,
+.original_mode #scent_ra {
+  display: none;
+}
+
+.original_mode .scent_title{
+  color: gold;
+}
+
+.original_mode .product_scent {
+  left: 110vh;
+  color: #007D59;
+}
+
+.original_mode .product_container {
+  background-color: gold;
+}
+
+
+ /* LIME MODE  */
+ 
+ .lime_mode #scent_original {
+  display: block;
+}
+
+.lime_mode #scent_lemon,
+.lime_mode #scent_original,
+.lime_mode #scent_ra {
+  display: none;
+}
+
+.lime_mode .scent_title {
+  color: #7CB227
+}
+.lime_mode .product_scent {
+  left: 120vh;
+}
+
+.lime_mode .product_container {
+  background-color: #7CB227;
+}
+
+
+
+.product_info {
+  width: 50%;
+  padding: 0px 40px 20px;
+  position: absolute;
+  top: 35%;
+}
+
+
+.scent_title {
+  color: #E2415F;
+  font-size: 4rem;
+}
+
+.scent_info {
+  width: 80%;
+  font-style: italic;
+  line-height: 1.6em;
+  font-size: 0.9em;
+  margin: 35px 0px;
+}
+
+.buy_button {
+  padding: 1em 1.8em;
+  border-radius: 25px;
+  color: white;
+  background-color: #0DB02B;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: 500ms ease;
+}
+
+.buy_button:hover {
+  background-color: #00dc28;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.product_container {
+  height: 200vh;
+  background-color: #E2415F;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: absolute;
+  top: -50vh;
+  right: 0;
+  transform: translate(50% , 0);
+  overflow: visible;
+  transition: 750ms ease;
+}
+
+
+.product_image {
+  height: 95vh;
+  transform: rotate(10deg) translate(-15% , 55vh);
+  z-index: 10;
+  filter: 
+    drop-shadow(1px 15px 15px  #000)
+    brightness(1.05);
+    opacity: 0;
+    
+  animation: scale 1000ms linear 750ms forwards;
+}
+
+@keyframes scale {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.product_scent {
+  text-transform: uppercase;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 5em;
+  position: absolute;
+  height: 0vh;
+  left: 90vh;
+  top: 50vh;
+  transform: rotate(270deg);  
+  animation: slide 1200ms linear 1000ms forwards;
+}
+
+@keyframes slide {
+  from {height: 0vh;}
+  to {height: 100vh;}
+}
+
+.fruit_splash {
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+}
+
+.fruit_splash img {
+  width: 100px;
+  position: absolute;
+  left: 45vh;
+  top: -45vh; 
+  opacity: 0;  
+  transition: 750ms linear;
+}
+
+.fruit_splash img:nth-child(odd) {
+  animation: scale 1000ms linear 2000ms forwards, shine infinite 3s linear;
+}
+
+.fruit_splash img:nth-child(even) {
+  animation: scale 1250ms linear 2000ms forwards, shine infinite 3s linear;
+}
+
+.fruit_splash img:hover {
+  rotate: 360deg;
+}
+
+@keyframes shine {
+  0% {
+    filter: 
+  drop-shadow(1px 1px 4px  #000)
+  brightness(1.15);
+  } 50% {
+    filter: 
+  drop-shadow(1px 1px 10px  #000)
+  brightness(1.35);
+  }
+  100% {
+    filter: 
+  drop-shadow(1px 1px 4px  #000)
+  brightness(1.15);
+  }
+  
+}
+
+.fruit_splash img:nth-child(2) {
+  transform: rotate(45deg) scale(1.4);
+  left: 53vh;
+  top: -20vh;
+}
+
+.fruit_splash img:nth-child(3) {
+  transform: rotate(34deg) scale(1.2);
+  left: 53vh;
+  top: 0vh;
+}
+
+.fruit_splash img:nth-child(4) {
+  transform: rotate(80deg) scale(0.8);
+  left: 38vh;
+  top: 14vh;
+}
+
+.fruit_splash img:nth-child(5) {
+  transform: rotate(161deg);
+  left: 35vh;
+  top: 37vh;
+}
+
+.fruit_splash img:nth-child(6) {
+  transform: rotate(338deg);
+  left: 3vh;
+  top: 36vh;
+  z-index: -1;
+}
+.fruit_splash img:nth-child(7) {
+  transform: rotate(18deg) scale(1.3);
+  left: -9vh;
+  top: 16vh;
+}
+.fruit_splash img:nth-child(8) {
+  transform: rotate(324deg) scale(1.3
+  );
+  left: -8vh;
+  top: -11vh;
+}
+.fruit_splash img:nth-child(9) {
+  transform: rotate(168deg) scale(1.1);
+  left: 0vh;
+  top: -41vh;
+}
+
+
+
+
+
+
+
+
+
