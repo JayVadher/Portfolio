@@ -6,21 +6,39 @@
     <title>To Do App</title>
 
     <link href="todo_style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 
 </head>
 <body>
     <div class="container">
+      <div class="about tooltip">Help
+        <span class="tooltiptext">An app that allows you to Enter tasks, mark as complete/uncomplete or clear all tasks. All tasks are saved in local storage, so in the event of browser close, tasks can still be viewed.</span>
+      </div>
         <div class="todo-app">
+          <div class="today">
+            <h3 id="day">Monday</h3>
+            <h3 id="date"></h3>
+          </div>
           <h2>To-Do List</h2>
-          <div class="row">
+         
+          
+          <div class="input_row">
             <input type="text" id="input-box" placeholder="Add Task">
             <button onclick="addTask()">Add</button>
           </div>
+          <div class="message" id="message"></div>
           <ul id="list-container">
             <!-- <li class="checked">Task 1</li>
             <li>Task 2</li>
             <li>Task 3</li> -->
           </ul>
+          <div class="button_row">
+            <button onclick="markAllComplete()" id="markComplete">Mark all completed</button>
+            <button onclick="clearAll()">Clear all</button>
+          </div>
+
         </div>
       </div>
     
