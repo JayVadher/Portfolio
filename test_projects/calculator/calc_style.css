@@ -14,18 +14,6 @@ body {
   transition: background-color 1s;
 }
 
-.logo {
-  position: fixed;
-  top: 15px;
-}
-
-.logo img{
-  width: 100px;
-  padding: 10px;
-  border-radius: 15px;
-  background: #2f9fff;
-}
-
 .container {
   position: relative;
   background: #fff;

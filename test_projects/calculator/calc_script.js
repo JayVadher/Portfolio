@@ -29,10 +29,8 @@ darkMode.addEventListener('change', () => {
 
   
 if (document.body.classList.contains('dark_mode')) {
-  console.log("jay dark mode");
   document.getElementById('mode_label').innerHTML = 'dark mode';
 } else {
-  console.log("jay light mode");
   document.getElementById('mode_label').innerHTML = 'light mode';
 }
   
