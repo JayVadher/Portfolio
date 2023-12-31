@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- Link Swiper's CSS -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
 
@@ -15,6 +14,7 @@
     <title>Jay Vadher - Portfolio</title>
 </head>
 <body onload="loaderFunction()">
+        
     <div id="loader"><span></span></div>
     <div id="mainPage">
         <div class="navbar" id="navbar">
@@ -118,10 +118,13 @@
             </div>
             
             <div id="projects">
+
                 <div class="frame frame_mobile">
                                                                                     
                 </div>
                 <h1>Projects</h1>
+                <p>Here are some of the personal projects I have done to better my skills in various languages and gain experience in tackling different obstacles 
+                    I encounter while developing various applications/webpages.</p>
                  <div class="project_container">
                     <div class="card reveal_left">
                         <img src="images/ubereats_clone.png" alt="Ubereats">
@@ -170,35 +173,47 @@
           
             <div id="skills">
                 <h1>Skills</h1>
-                <p>I've been doing web development for about 6 months now, and I'm always eager to learn more in this fast paced industry.</p>
+                <p>
+                    I've been diving into web development for about 8 months now, and I'm always hungry to learn more in this fast changing industry. 
+                    I've picked up quite a few languages and skills along the way. It's all been self-taught, mostly hopping between YouTube, Udemy, Codecademy, 
+                    and plenty of Google searches. 
+                    I've tinkered and put together a bunch of web projects while leveling up my skills. 
+                    Below are some of the skills and languages I have worked with.
+                </p>
                 <div class="skills_container">
-                    <div class="development reveal">
-                        <i class="fa-solid fa-gears"></i>
-                        <h2>Development</h2>
-                        <div class="development_skills">
-                            <span><img src="images/html-5-logo-svgrepo-com.svg" alt="HTML5">Html5</span>
-                            <span><img src="images/css-3-svgrepo-com.svg" alt="CSS3">Css3</span>
-                            <span><img src="images/javascript-svgrepo-com.svg" alt="JAVASCRIPT">Javascript</span>
-                        </div>
+                    <!-- Slider main container -->
+                <div class="swiper mySwiper" init="false">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="images/html-5-logo-svgrepo-com.svg" alt="HTML5"><span>Html5</span>                    
+                      </div>
+                      <div class="swiper-slide">                       
+                        <img src="images/css-3-svgrepo-com.svg" alt="CSS3"><span>Css3</span>
+                      </div>
+                      <div class="swiper-slide">                       
+                        <img src="images/javascript-svgrepo-com.svg" alt="JAVASCRIPT"><span>Javascript</span>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="images/gimp-svgrepo-com.svg" alt="GIMP"><span>Gimp</span>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="images/canva-svgrepo-com.svg" alt="CANVA"><span>Canva</span>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="images/git-svgrepo-com.svg" alt="GIT"><span>Git</span>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="images/github-142-svgrepo-com.svg" alt="GITHUB"><span>GitHub</span>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="images/browser-google-chrome-svgrepo-com.svg" alt="CHROME DEV TOOLS"><span>Chrome Dev Tools</span>
+                      </div>
                     </div>
-                    <div class="design reveal">
-                        <i class="fa-solid fa-paintbrush"></i>
-                        <h2>Design</h2>
-                        <div class="design_skills">
-                            <span><img src="images/gimp-svgrepo-com.svg" alt="GIMP">Gimp</span>
-                            <span><img src="images/canva-svgrepo-com.svg" alt="CANVA">Canva</span>
-                        </div>
-                    </div>
-                    <div class="tools reveal">
-                        <i class="fas fa-tools"></i>
-                        <h2>Tools</h2>
-                        <div class="tools_skills">
-                            <span><img src="images/git-svgrepo-com.svg" alt="GIT">Git</span>
-                            <span><img src="images/github-142-svgrepo-com.svg" alt="GITHUB">GitHub</span>
-                            <span><img src="images/browser-google-chrome-svgrepo-com.svg" alt="CHROME DEV TOOLS">Chrome Dev Tools</span>
-                        </div>
-                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
+                </div>
+
+                
             </div>
             <div id="contact">
                 <button class="modal_button contact_button" onclick="showModal()">Contact Jay</button>
@@ -216,7 +231,9 @@
     
        
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     <script src="js/script.js" type="text/javascript"></script>
 
 

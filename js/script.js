@@ -5,20 +5,17 @@ var swiper = new Swiper(".mySwiper", {
     centeredSlides: true,
     slidesPerView: "auto",
     coverflowEffect: {
-      rotate: 9,
+      rotate: 8,
       stretch: 0,
       depth: 300,
       modifier: 1,
       slideShadows: true
     },
     loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
     autoplay: {
-        delay: 5000,
-        disableOnInteraction: true,
+        delay: 1500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
     },
   });
 
@@ -201,3 +198,6 @@ window.onclick = function(event) {
     modal.classList.remove('show');
   }
 }
+
+
+
