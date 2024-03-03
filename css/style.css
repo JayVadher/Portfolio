@@ -583,7 +583,7 @@ hr {
     background-size: cover;
     width: 200px;
     height: 240px;
-    border-radius: 15px;
+    border-radius: 7px;
     border: 3px solid #4832D5;
     display: flex;
     flex-direction: column;
@@ -591,11 +591,12 @@ hr {
     filter: brightness(0.5);
     background: linear-gradient(to top, #ccf281 25%, #fff 60%);
     -webkit-box-reflect: below 6px -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(40%, transparent), to(rgba(255, 255, 255, 0.1)));
-    transition: all 750ms linear !important;
+   
   }
 
   .swiper-slide-active {
     filter: brightness(1);
+    transition: all 750ms linear !important;
   }
 
   .swiper-slide img {

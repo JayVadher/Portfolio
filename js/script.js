@@ -13,7 +13,7 @@ var swiper = new Swiper(".mySwiper", {
     },
     loop: true,
     autoplay: {
-        delay: 1500,
+        delay: 2000,
         disableOnInteraction: false,
         pauseOnMouseEnter: false,
     },
